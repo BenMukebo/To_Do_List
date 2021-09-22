@@ -5,13 +5,28 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
    entry: {
      index: './src/index.js',
    },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'Output Management',
-    }),
-  ],
    output: {
-     filename: '[name].bundle.js',
+     filename: 'main.js',
      path: path.resolve(__dirname, 'dist'),
    },
+   plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Output Management',
+      template: './src/index.html'
+    }),
+  ],
  };
+
+
+  // output: {
+  //   publicPath: '/',
+  // },
+
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     filename: './index.html',
+  //   }),
+  // ],
+  // devServer: {
+  //   contentBase: './dist',
+  // },
