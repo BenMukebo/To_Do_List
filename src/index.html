@@ -5,9 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <!-- <link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/> -->
 </head>
 <body>
+  <section>
+    <div class="header">
+      <p class="header-title">Today's To Do</p>
+      <span><i class="fas fa-sync-alt"></i></span>
+    </div>
 
-  <script src="./src/index.js"></script>
+    <form id="form">
+      <div class="add-section">
+        <input id="add-book" type="text" placeholder="Add to your list" />
+        <i class="fa fa-level-down-alt"></i>
+      </div>
+    </form>
+
+    <ul class="books-container">
+    </ul>
+    <button class="clear-btn" type="button">Clear all completed</button>
+  </section>
+
+  <script src="index.js"></script>
 </body>
 </html>
