@@ -1,13 +1,11 @@
-import { getTask, tasks } from './data';
+import { getTask, sortedTasks } from './data';
 
 window.onload = () => {
-  tasks.forEach(task => {
+console.log(sortedTasks);
+ sortedTasks.forEach(task => {
     getTask(task);
   });
-}
-
-
-
+};
 
 
 

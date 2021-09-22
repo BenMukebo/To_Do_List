@@ -1,20 +1,26 @@
-export const tasks = [
+import { sortItems } from './utils';
+
+const tasks = [
   {
-    description: 'List structure.',
+    description: '1.List structure.',
     completed: false,
     index: 1,
   },
   {
-    description: 'Interactive list.',
+    description: '2.Interactive list.',
     completed: false,
     index: 2,
   },
   {
-    description: 'Add and remove items.',
+    description: '3.Add and remove items.',
     completed: false,
     index: 3,
   },
 ];
+
+export const sortedTasks = sortItems(tasks);
+
+// console.log(sortedTasks);
 
 const taskList = document.querySelector('.task-container .tasks');
 
