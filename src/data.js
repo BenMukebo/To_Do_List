@@ -20,8 +20,6 @@ const tasks = [
 
 export const sortedTasks = sortItems(tasks);
 
-// console.log(sortedTasks);
-
 const taskList = document.querySelector('.task-list');
 
 export const getTask = (task) => {
@@ -34,5 +32,4 @@ export const getTask = (task) => {
       <i class="fas fa-ellipsis-v"></i>
     </span>
   </li>`;
-  // return taskList;
 };
