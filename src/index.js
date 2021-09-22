@@ -1,14 +1,8 @@
 import './style.css';
-import { getTask, sortedTasks } from './data';
+import { getTask, sortedTasks } from './data.js';
 
 window.onload = () => {
-console.log(sortedTasks);
- sortedTasks.forEach(task => {
+  sortedTasks.forEach((task) => {
     getTask(task);
   });
 };
-
-
-
-
-

@@ -2,7 +2,7 @@
   --primary: rgb(71, 69, 69);
   --secondary: #ccc;
   --border: rgb(221, 219, 219);
-  --background: rgb(243, 243, 243);;
+  --background: rgb(243, 243, 243);
 }
 
 * {
@@ -42,6 +42,7 @@ section {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   /* padding: 0 1rem; */
 }
 
@@ -51,14 +52,19 @@ section {
   color: var(--primary);
 }
 
+form i {
+  transform: rotate(90deg);
+  font-size: 14px;
+  font-weight: 400;
+}
+
 .header i {
   transform: rotate(90deg);
   font-size: 18px;
-  /* font-weight: 400; */
 }
 
 form > div {
-border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   padding: 0.7rem 1.5rem;
 }
 
@@ -66,8 +72,7 @@ form input {
   border: none;
   outline: none;
   min-width: 250px;
-  padding: 0.8rem 0rem;
-
+  padding: 0.8rem 0;
 }
 
 form input,
@@ -78,14 +83,6 @@ form input::-webkit-input-placeholder {
   font-weight: 100;
   color: rgb(117, 117, 117);
 }
-
-
-form i {
-  transform: rotate(90deg);
-  font-size: 14px;
-  font-weight: 400;
-}
-
 
 .task-list {
   min-width: 100%;
@@ -98,7 +95,6 @@ form i {
   padding: 1.2rem 1.2rem;
 }
 
-
 .task-list li label {
   margin-left: 6px;
   font-size: inherit;
@@ -106,19 +102,19 @@ form i {
   cursor: pointer;
 }
 
-.clear-btn button{
+.clear-btn button {
   width: 100%;
   font-size: inherit;
   padding: 1.2rem;
   border: none;
   outline: none;
-  color: rgb(172, 169, 169);;
+  color: rgb(172, 169, 169);
   background-color: var(--background);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   cursor: pointer;
 }
 
-.clear-btn button:active{
-text-decoration: underline;
+.clear-btn button:active {
+  text-decoration: underline;
 }

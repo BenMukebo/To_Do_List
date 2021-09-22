@@ -61,6 +61,13 @@ For tracking linter errors locally you need to follow these steps:
   - And For tracking the linter errors in JavaScript file run:
   > npx eslint .
 
+  - Use `npm run build` to run the app in live server
+  
+  - Install `npm install --save-dev webpack-dev-server` to have the ability to use live reloading.
+  
+  - Then Run from the command line `npm start`  to will see the browser automatically loading up our page. 
+
+
 ## Author
 
 👤 **Kasongo Mukebo Ben**

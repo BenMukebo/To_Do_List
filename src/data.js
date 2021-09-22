@@ -1,4 +1,4 @@
-import { sortItems } from './utils';
+import { sortItems } from './utils.js';
 
 const tasks = [
   {
@@ -25,7 +25,7 @@ export const sortedTasks = sortItems(tasks);
 const taskList = document.querySelector('.task-list');
 
 export const getTask = (task) => {
-    taskList.innerHTML += `<li class="book d-flex flex-center">
+  taskList.innerHTML += `<li class="book d-flex flex-center">
     <span class="left">
       <input id=${task.index} type="checkbox" />
       <label for=${task.index}>${task.description}</label>
@@ -36,8 +36,3 @@ export const getTask = (task) => {
   </li>`;
   // return taskList;
 };
-
-
-
-
-  
