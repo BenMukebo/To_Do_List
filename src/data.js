@@ -16,5 +16,4 @@ const tasks = [
   },
 ];
 
-Create a storage.js files and implement methods related to the status updates
 export default tasks;
