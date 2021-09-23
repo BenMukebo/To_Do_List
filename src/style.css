@@ -93,11 +93,21 @@ form input::-webkit-input-placeholder {
   padding: 1.2rem 1.2rem;
 }
 
+.task-list li.active {
+  background-color: #faf3db;
+}
+
 .task-list li label {
   margin-left: 6px;
   font-size: inherit;
   color: var(--primary);
   cursor: pointer;
+}
+
+.task-list li label.compeleted {
+  text-decoration: line-through;
+  font-style: italic;
+  color: var(--secondary);
 }
 
 .task-list li i:hover {
@@ -122,8 +132,3 @@ form input::-webkit-input-placeholder {
   text-decoration: underline;
 }
 
-.task-list li label.compeleted {
-  text-decoration: line-through;
-  font-style: italic;
-  color: var(--secondary);
-}

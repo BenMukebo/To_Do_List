@@ -17,9 +17,12 @@ const getTask = (task) => {
   </li>`;
 
   const books = document.querySelectorAll('.book');
+
   books.forEach((box) => {
     const checkBox = box.querySelector('.checkbox');
     const label = box.querySelector('.title');
+    const icon = box.querySelector('.right i');
+
     let state = false;
     checkBox.addEventListener('click', () => {
       if (!state) {
@@ -31,6 +34,21 @@ const getTask = (task) => {
       }
       const taskId = checkBox.id;
       completedTask(taskId);
+    });
+
+    let change = false;
+    icon.addEventListener('click', () => {
+      if (!change) {
+        box.classList.add('active');
+        icon.classList.remove('fas', 'fa-ellipsis-v');
+        icon.classList.add('far', 'fa-trash-alt');
+        change = true;
+      } else {
+        box.classList.remove('active');
+        icon.classList.remove('far', 'fa-trash-alt');
+        icon.classList.add('fas', 'fa-ellipsis-v');
+        change = false;
+      }
     });
   });
 };
