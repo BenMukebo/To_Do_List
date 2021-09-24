@@ -48,6 +48,16 @@ const getTask = (task) => {
         icon.classList.remove('fas', 'fa-ellipsis-v');
         icon.classList.add('far', 'fa-trash-alt');
         change = true;
+      } else {
+        // Function for adding a new task
+        const getTasks = storage.getItem();
+        const sortedTasks = sortItems(getTasks);
+        const filterTasks = sortedTasks.filter((book) => book.index.toString() !== indexBox);
+        storage.setItem(filterTasks);
+        taskList.innerHTML = '';
+        filterTasks.forEach((task) => {
+          getTask(task);
+        });
       }
     });
   });
