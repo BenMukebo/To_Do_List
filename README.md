@@ -30,7 +30,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://benmukebo.github.io/To_Do_List/)
+[Live Demo Link](https://benmukebo.github.io/To_Do_List/dist/)
 
 
 ## Getting Started
