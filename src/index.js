@@ -99,7 +99,7 @@ const getTask = (task) => {
 };
 
 let getTasks;
-
+console.log('heiaaoiuhewiuhgoiugfhesgoahgewiuoh');
 (function setTaks() {
   if (!storage.getItem()) {
     storage.setItem(tasks);
@@ -147,4 +147,3 @@ form.addEventListener('submit', (e) => {
   enterTask.value = '';
 });
 
-// Function for Clear all completed a new task

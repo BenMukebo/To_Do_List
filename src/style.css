@@ -32,6 +32,13 @@ i {
   color: var(--secondary);
 }
 
+button,
+input.editInput {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
 section {
   background-color: #fff;
   width: 50%;
@@ -80,6 +87,9 @@ form input::-webkit-input-placeholder {
   font-style: italic;
   font-weight: 100;
   color: rgb(131, 130, 130);
+  background-color: transparent;
+  width: 90%;
+  min-width: 200px;
 }
 
 .task-list {
@@ -90,15 +100,21 @@ form input::-webkit-input-placeholder {
   width: 100%;
   list-style: none;
   border-bottom: 1px solid var(--border);
-  padding: 1.2rem 1.2rem;
+  padding: 0.2rem 1.2rem;
 }
 
 .task-list li.active {
   background-color: #faf3db;
 }
 
-.task-list li label {
+input.editInput {
+  display: none;
+}
+
+.task-list li label,
+input.editInput {
   margin-left: 6px;
+  padding: 1rem 0;
   font-size: inherit;
   color: var(--primary);
   cursor: pointer;
@@ -119,8 +135,6 @@ form input::-webkit-input-placeholder {
   width: 100%;
   font-size: inherit;
   padding: 1.2rem;
-  border: none;
-  outline: none;
   color: var(--secondary);
   background-color: var(--background);
   border-bottom-left-radius: 8px;
