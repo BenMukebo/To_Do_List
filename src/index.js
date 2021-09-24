@@ -1,7 +1,6 @@
-/* eslint-disable import/extensions */
 import './style.css';
 import sortItems from './utils.js';
-import tasks from './data';
+import tasks from './data.js';
 import completedTask from './controllers.js';
 import storage from './storage.js';
 
