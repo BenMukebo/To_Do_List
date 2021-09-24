@@ -1,6 +1,6 @@
 const storage = {
   getItem() {
-    return JSON.parse(localStorage.getItem('tasks')) || [];
+    return JSON.parse(localStorage.getItem('tasks') || '[]');
   },
 
   setItem(items) {
