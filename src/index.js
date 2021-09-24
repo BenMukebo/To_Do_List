@@ -78,3 +78,26 @@ class Task {
     this.index = index;
   }
 }
+
+// Function for adding a new task
+
+const form = document.querySelector('#form');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const enterTask = document.querySelector('#task-input').value;
+  if (enterTask === '') return;
+
+  const getTasks = storage.getItem() || [];
+  const sortedTasks = sortItems(getTasks);
+  let index = sortedTasks.length;
+  index += 1;
+  const newTask = new Task(enterTask, index);
+  // console.log(newTask);
+
+  sortedTasks.push(newTask);
+  storage.setItem(sortedTasks);
+
+  getTask(newTask);
+  enterTask.value = '';
+});
