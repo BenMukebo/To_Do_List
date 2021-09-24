@@ -8,7 +8,7 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    static: './dist',
+    static: './docs',
   },
 
   plugins: [
@@ -20,7 +20,7 @@ module.exports = {
 
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
   },
   module: {
     rules: [
