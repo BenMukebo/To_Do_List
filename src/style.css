@@ -102,10 +102,6 @@ form input::-webkit-input-placeholder {
   padding: 0.7rem 1.2rem;
 }
 
-.tasks-list li.active {
-  background-color: #faf3db;
-}
-
 .tasks-list li label {
   margin-left: 6px;
   font-size: inherit;
@@ -113,11 +109,11 @@ form input::-webkit-input-placeholder {
   cursor: pointer;
 }
 
-.tasks-list li label.compeleted {
+/* .tasks-list li label.compeleted {
   text-decoration: line-through;
   font-style: italic;
   color: var(--secondary);
-}
+} */
 
 .tasks-list li i:hover {
   color: var(--primary);
@@ -135,10 +131,6 @@ form input::-webkit-input-placeholder {
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   cursor: pointer;
-}
-
-.clear-btn button:active {
-  text-decoration: underline;
 }
 
 .task-container .task-details {
