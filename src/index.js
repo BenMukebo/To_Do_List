@@ -1,19 +1,20 @@
 import './style.css';
 import sortItems from './utils.js';
 // import tasks from './data.js';
-import completedTask from './controllers.js';
+import { completedTask, removeCompletedTask } from './controllers.js';
 import storage from './storage.js';
 
 const tasks = storage.getItem();
 // console.log(tasks);
 const taskList = document.querySelector('.task-list');
+// const filters;
 
 const getTask = (task) => {
   taskList.innerHTML += `<li class="book d-flex flex-center">
     <span class="left d-flex flex-center">
-      <input class="checkbox" id=${task.index} type="checkbox" /> 
+      <input class="checkbox" ${task.completed ? 'checked' : ''} id=${task.index} type="checkbox" /> 
       <input class="editInput" type="text" value="${task.description}" /> 
-      <label class="title" for=${task.index}.>${task.description}</label>
+      <label class="${task.completed ? 'title compeleted' : 'title'}" for=${task.index}.>${task.description}</label>
     </span>
     <span class="right">
       <i class="fas fa-ellipsis-v"></i>
@@ -28,21 +29,18 @@ const getTask = (task) => {
     const inputEdit = box.querySelector('.editInput');
     const label = box.querySelector('.title');
     const icon = box.querySelector('.right i');
-    let state = false;
     let change = false;
 
     // Check box action
 
     checkBox.addEventListener('click', () => {
-      if (!state) {
-        label.classList.add('compeleted');
-        state = true;
-      } else {
-        label.classList.remove('compeleted');
-        state = false;
-      }
       const taskId = checkBox.id;
       completedTask(taskId);
+      const tasks = storage.getItem();
+      taskList.innerHTML = '';
+      tasks.forEach((task) => {
+        getTask(task);
+      });
     });
 
     // Icons action
@@ -62,8 +60,12 @@ const getTask = (task) => {
 
         const getTasks = storage.getItem();
         const sortedTasks = sortItems(getTasks);
-        const filterTasks = sortedTasks.filter((book) => book.index.toString() !== indexBox);
+        let filterTasks = sortedTasks.filter((book) => book.index.toString() !== indexBox);
         // console.log(taskList.innerHTM);
+        filterTasks = filterTasks.map((item, index) => {
+          item.index = index + 1;
+          return item;
+        });
         storage.setItem(filterTasks);
         taskList.innerHTML = '';
         filterTasks.forEach((task) => {
@@ -79,7 +81,7 @@ const getTask = (task) => {
         const { value } = inputEdit;
         console.log(value);
         tasks.forEach((task, ind) => {
-          if (index === ind) {///////
+          if (index === ind) { /// ////
             task.description = value;
             tasks.splice(ind, 1, task);
             storage.setItem(tasks);
@@ -135,8 +137,7 @@ form.addEventListener('submit', (e) => {
 
   const getTasks = storage.getItem() || [];
   const sortedTasks = sortItems(getTasks);
-  let index = sortedTasks.length;
-  index += 1;
+  const index = sortedTasks.length + 1;
   const newTask = new Task(enterTask.value, index);
   // console.log(newTask);
 
@@ -147,3 +148,18 @@ form.addEventListener('submit', (e) => {
   enterTask.value = '';
 });
 
+// Function for Clear all completed a new task
+
+const clearBtn = document.querySelector('#clear');
+
+clearBtn.addEventListener('click', () => {
+  const tasks = storage.getItem();
+  const completedTasks = removeCompletedTask(tasks);
+  console.log(completedTasks);
+  storage.setItem(completedTasks);
+  taskList.innerHTML = '';
+  const newTasks = storage.getItem();
+  newTasks.forEach((task) => {
+    getTask(task);
+  });
+});
