@@ -1,15 +1,14 @@
 const storage = {
-  getItem() {
-    return JSON.parse(localStorage.getItem('tasks')) || [];
+  //  function manupilate the local storage
+  get: (key) => {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : null;
   },
-
-  setItem(items) {
-    localStorage.setItem('tasks', JSON.stringify(items));
+  set: (key, value) => {
+    localStorage.setItem(key, JSON.stringify(value));
   },
-
-  clear() {
-    localStorage.clear();
+  remove: (key) => {
+    localStorage.removeItem(key);
   },
 };
-
 export default storage;

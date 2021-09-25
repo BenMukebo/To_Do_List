@@ -17,7 +17,6 @@
 
 .flex-center {
   align-items: center;
-  justify-content: space-between;
 }
 
 body {
@@ -48,11 +47,18 @@ section {
   border-bottom: 1px solid var(--border);
   padding: 1.2rem 1.5rem;
   color: var(--primary);
+  justify-content: space-between;
 }
 
-form i {
+form button {
+  background-color: transparent;
+  border: none;
+  padding: 0.6rem;
+}
+
+form button i {
   transform: rotate(90deg);
-  font-size: 12px;
+  font-size: 1rem;
   font-weight: 400;
 }
 
@@ -64,6 +70,8 @@ form i {
 form > div {
   border-bottom: 1px solid var(--border);
   padding: 0.7rem 1.5rem;
+  justify-content: space-between;
+  width: 100%;
 }
 
 form input {
@@ -71,6 +79,7 @@ form input {
   outline: none;
   min-width: 250px;
   padding: 0.8rem 0;
+  flex: 1;
 }
 
 form input,
@@ -82,35 +91,31 @@ form input::-webkit-input-placeholder {
   color: rgb(131, 130, 130);
 }
 
-.task-list {
+.tasks-list {
   min-width: 100%;
 }
 
-.task-list li {
+.tasks-list li {
   width: 100%;
   list-style: none;
   border-bottom: 1px solid var(--border);
-  padding: 1.2rem 1.2rem;
+  padding: 0.7rem 1.2rem;
 }
 
-.task-list li.active {
-  background-color: #faf3db;
-}
-
-.task-list li label {
+.tasks-list li label {
   margin-left: 6px;
   font-size: inherit;
   color: var(--primary);
   cursor: pointer;
 }
 
-.task-list li label.compeleted {
+/* .tasks-list li label.compeleted {
   text-decoration: line-through;
   font-style: italic;
   color: var(--secondary);
-}
+} */
 
-.task-list li i:hover {
+.tasks-list li i:hover {
   color: var(--primary);
   cursor: pointer;
 }
@@ -128,6 +133,73 @@ form input::-webkit-input-placeholder {
   cursor: pointer;
 }
 
-.clear-btn button:active {
-  text-decoration: underline;
+.task-container .task-details {
+  flex: 1;
+  display: flex;
+  padding: 0 1rem;
+}
+
+.task-container .task-details span {
+  margin-left: 6px;
+  font-size: inherit;
+  color: var(--primary);
+}
+
+.task-container .task-details span.compeleted {
+  text-decoration: line-through;
+}
+
+.task-container .task-details input {
+  border: none;
+  font-size: inherit;
+  color: var(--primary);
+  outline: none;
+  flex: 1;
+  display: none;
+  background-color: transparent;
+}
+
+.task-container .task-action-btns button {
+  width: 2.2rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 0;
+}
+
+.task-container .task-action-btns button:last-child {
+  display: none;
+}
+
+.edit-task-form {
+  flex: 1;
+  display: flex;
+}
+
+.task-container .task-action-btns button i {
+  font-size: 1.2rem;
+}
+
+.task-container.edit-mode {
+  background-color: #faf3db;
+}
+
+.task-container.edit-mode .task-action-btns button:last-child {
+  display: block;
+}
+
+.task-details.completed span {
+  text-decoration: line-through;
+}
+
+.task-container.edit-mode .task-action-btns button:first-child {
+  display: none;
+}
+
+.task-container.edit-mode .task-details input {
+  display: block;
+}
+
+.task-container.edit-mode .task-details span {
+  display: none;
 }
