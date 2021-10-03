@@ -102,6 +102,10 @@ form input::-webkit-input-placeholder {
   padding: 0.7rem 1.2rem;
 }
 
+.task-container button i {
+  font-size: 1.2rem;
+}
+
 .tasks-list li label {
   margin-left: 6px;
   font-size: inherit;
@@ -178,10 +182,6 @@ form input::-webkit-input-placeholder {
 .edit-task-form {
   flex: 1;
   display: flex;
-}
-
-.task-container .task-action-btns button i {
-  font-size: 1.2rem;
 }
 
 .task-container.edit-mode {
