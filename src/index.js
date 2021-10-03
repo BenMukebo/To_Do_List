@@ -25,6 +25,7 @@ form.addEventListener('submit', (e) => {
   task.add(savedTask);
   const tasks = task.get();
   dom.renderTasks(tasks);
+  todoTextInput.value = '';
 });
 
 getDefaultTasks();
