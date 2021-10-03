@@ -164,7 +164,11 @@ form input::-webkit-input-placeholder {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  padding: 0.6rem 0;
+  padding: 0.3rem 0;
+}
+
+.task-container .task-action-btns button i {
+  padding: 0.6rem;
 }
 
 .task-container .task-action-btns button:last-child {
